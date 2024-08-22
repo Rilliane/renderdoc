@@ -431,10 +431,15 @@ void TextureViewer::UI_UpdateCachedTexture()
       }
       else if(!shaderDetails->debugInfo.debuggable)
       {
+        //Christine:先注释掉不许debug的代码
+        /*
         ui->debugPixelContext->setEnabled(false);
         ui->debugPixelContext->setToolTip(
             tr("The current pixel shader does not support debugging: %1")
                 .arg(shaderDetails->debugInfo.debugStatus));
+                */
+        ui->debugPixelContext->setEnabled(true);
+        ui->debugPixelContext->setToolTip(QString());
       }
       else
       {
